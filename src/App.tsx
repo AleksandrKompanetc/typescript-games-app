@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import AdultOrNot from './AdultOrNot';
 
 function App() {
-  const [isAdult, setIsAdult] = useState(null);
+  const [isAdult, setIsAdult] = useState<boolean | null>(false);
   const [loading, setLoading] = useState(true);
   const [games, setGames] = useState([]);
 
@@ -33,16 +34,19 @@ function App() {
   return (
     <div>
       {games.map((game) => (
-        <div key={game.id} style={{border: '1px solid blue'}}>
+        <div key={game.id} style={{ border: '1px solid blue' }}>
           Game:
           {game.forKids && !isAdult ? (
-            <b style={{color: 'red'}}></b>
+            <b style={{ color: 'red' }}>Вам не доступна эта игра!</b>
           ) : (
             <>
-              <Game 
+              <Game
                 name={game.name}
                 description={game.description}
+                version={game.version}
               />
+              Price: {priceWithCurrency(game.price)}
+              Tags: {renderTags(game.tags)}
             </>
           )}
         </div>
