@@ -7,3 +7,7 @@ export function getGamesFromServer() {
     }, 1000);
   });
 }
+
+export function priceWithCurrency(price: number) {
+  return `${price} $`;
+}
