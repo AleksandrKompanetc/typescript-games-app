@@ -1,4 +1,4 @@
-type Game = {
+type GameFromServer = {
   id: number;
   name: string;
   description?: string;
@@ -8,7 +8,7 @@ type Game = {
   forKids: boolean;
 }
 
-type Games = Game[];
+type Games = GameFromServer[];
 
 export const GAMES: Games = [
   {
