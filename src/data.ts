@@ -1,4 +1,4 @@
-type GameFromServer = {
+export type GameFromServer = {
   id: number;
   name: string;
   description?: string;
@@ -8,9 +8,9 @@ type GameFromServer = {
   forKids: boolean;
 }
 
-type Games = GameFromServer[];
+export type GamesFromServer = GameFromServer[];
 
-export const GAMES: Games = [
+export const GAMES: GamesFromServer = [
   {
     id: 1,
     name: 'Mortal Kombat',
