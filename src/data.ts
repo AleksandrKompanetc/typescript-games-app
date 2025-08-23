@@ -1,4 +1,16 @@
-export const GAMES = [
+type Game = {
+  id: number;
+  name: string;
+  description?: string;
+  version?: string;
+  price?: number;
+  tags?: string[];
+  forKids: boolean;
+}
+
+type Games = Game[];
+
+export const GAMES: Games = [
   {
     id: 1,
     name: 'Mortal Kombat',
