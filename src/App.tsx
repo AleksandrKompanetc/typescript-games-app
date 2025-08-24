@@ -15,7 +15,7 @@ function App() {
     });
   }, []);
 
-  const renderTags = () => {
+  const renderTags = (tags: string[] | undefined) => {
     return tags?.map((tag, index) => (
       <span key={tag + index}>{tag}</span>
     ))
