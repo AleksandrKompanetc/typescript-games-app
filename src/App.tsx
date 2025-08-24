@@ -5,13 +5,13 @@ import { getGamesFromServer, priceWithCurrency } from './utils';
 
 function App() {
   const [isAdult, setIsAdult] = useState<boolean | null>(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [games, setGames] = useState<GamesFromServer[]>([]);
 
   useState(() => {
     getGamesFromServer().then((gamesFromServer) => {
       setLoading(false);
-      setGames(gamesFromServer as GamesFromServer);
+      setGames([gamesFromServer]);
     });
   }, []);
 

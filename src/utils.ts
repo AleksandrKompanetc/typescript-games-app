@@ -1,4 +1,4 @@
-import { GAMES, GamesFromServer } from './data';
+import { GAMES, type GamesFromServer } from './data';
 
 export function getGamesFromServer(): Promise<GamesFromServer> {
   return new Promise((resolve) => {
