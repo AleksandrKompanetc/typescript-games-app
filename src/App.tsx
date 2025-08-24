@@ -47,7 +47,14 @@ function App() {
                 description={game.description}
                 version={game.version}
               />
-              Price: {priceWithCurrency(game.price)}
+
+              {
+                typeof game.price === 'number' && (
+                  <>
+                    Price: {priceWithCurrency(game.price)}
+                  </>
+                )
+              }
               Tags: {renderTags(game.tags)}
             </>
           )}
