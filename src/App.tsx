@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import AdultOrNot from './AdultOrNot';
-import type { GamesFromServer } from './data';
+import type { GamesFromServer, GameFromServer } from './data';
 import { getGamesFromServer, priceWithCurrency } from './utils';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     });
   }, []);
 
-  const renderTags = (tags: string[] | undefined) => {
+  const renderTags = (tags: GameFromServer['tags']): JSX.Element[] | undefined => {
     return tags?.map((tag, index) => (
       <span key={tag + index}>{tag}</span>
     ))
