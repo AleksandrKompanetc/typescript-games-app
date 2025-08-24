@@ -16,6 +16,9 @@ function App() {
   }, []);
 
   const renderTags = (tags: GameFromServer['tags']): JSX.Element[] | undefined => {
+    if (!tags) {
+      return null;
+    }
     return tags?.map((tag, index) => (
       <span key={tag + index}>{tag}</span>
     ))
