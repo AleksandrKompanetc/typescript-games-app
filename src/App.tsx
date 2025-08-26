@@ -56,7 +56,10 @@ function App() {
                   </>
                 )
               }
-              Tags: {renderTags(game.tags)}
+              {game.tags && (
+                <>
+                  Tags: {renderTags(game.tags)}
+              )}
             </>
           )}
         </div>
