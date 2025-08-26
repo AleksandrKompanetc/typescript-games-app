@@ -15,7 +15,7 @@ function App() {
     });
   }, []);
 
-  const renderTags = (tags: GameFromServer['tags']): JSX.Element[] | null => {
+  const renderTags = (tags: NonNullable<GameFromServer['tags']>) => {
     
     return tags.map((tag, index) => (
       <span key={tag + index}>{tag}</span>
