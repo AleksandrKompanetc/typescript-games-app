@@ -1,10 +1,12 @@
+import { FC } from 'react';
+
 type GameProps = {
   name: string;
-  description: string;
-  version: string;
+  description?: string;
+  version?: string;
 }
 
-function Game({ name, description, version}: GameProps) {
+const Game: FC<GameProps> = ({ name, description, version}) => {
   return (
     <div>
       <p>Name: {name}</p>
