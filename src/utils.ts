@@ -9,6 +9,15 @@ export function getGamesFromServer(): Promise<GamesFromServer> {
   });
 }
 
-export function priceWithCurrency(price: number, currency: GameFromServer['currency']): string {
-  return `${price} $`;
+export function priceWithCurrency(
+  price: NonNullable<GameFromServer['price']>, 
+  currency: GameFromServer['currency']
+): string {
+
+  if (currency === 'EUR') {
+    return `${price} €`;
+  } else if (currency === 'HRN') {
+    return `${price} грн`;
+  }
+    return `${price} $`;
 }
