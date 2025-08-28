@@ -2,16 +2,17 @@ import { useState, type JSX } from 'react';
 import AdultOrNot from './AdultOrNot';
 import type { GamesFromServer, GameFromServer } from './data';
 import { getGamesFromServer, priceWithCurrency } from './utils';
+import Game from './Game';
 
 function App() {
   const [isAdult, setIsAdult] = useState<boolean | null>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [games, setGames] = useState<GamesFromServer[]>([]);
+  const [games, setGames] = useState<GameFromServer[]>([]);
 
   useState(() => {
     getGamesFromServer().then((gamesFromServer) => {
       setLoading(false);
-      setGames([gamesFromServer]);
+      setGames(gamesFromServer);
     });
   }, []);
 

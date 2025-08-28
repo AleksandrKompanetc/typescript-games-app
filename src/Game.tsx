@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+import type { GameFromServer } from './data';
 
 type GameProps = {
-  name: string;
-  description?: string;
-  version?: string;
+  name: GameFromServer['name'];
+  description?: GameFromServer['description'];
+  version?: GameFromServer['version'];
 }
 
 const Game: FC<GameProps> = ({ name, description, version}) => {
