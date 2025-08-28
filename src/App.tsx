@@ -53,7 +53,7 @@ function App() {
               {
                 typeof game.price === 'number' && (
                   <>
-                    Price: {priceWithCurrency(game.price)}
+                    Price: {priceWithCurrency(game.price, game.currency)}
                   </>
                 )
               }

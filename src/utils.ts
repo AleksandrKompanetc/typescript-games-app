@@ -1,4 +1,5 @@
-import { GAMES, type GamesFromServer } from './data';
+import { GAMES } from './data';
+import type { GameFromServer, GamesFromServer } from './data';
 
 export function getGamesFromServer(): Promise<GamesFromServer> {
   return new Promise((resolve) => {
@@ -8,6 +9,6 @@ export function getGamesFromServer(): Promise<GamesFromServer> {
   });
 }
 
-export function priceWithCurrency(price: number) {
+export function priceWithCurrency(price: number, currency: GameFromServer['currency']): string {
   return `${price} $`;
 }
