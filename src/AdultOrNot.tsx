@@ -1,4 +1,4 @@
-import type { FC, ChangeEvent, MouseEvent } from "react";
+import type { FC, ChangeEvent, ChangeEventHandler, MouseEvent } from "react";
 
 type AdultOrNotProps = {
   setIsAdult: (value: boolean) => void;
@@ -12,10 +12,10 @@ const AdultOrNot:FC<AdultOrNotProps> = ({setIsAdult}) => {
 
   const noHandler = (event: MouseEvent<HTMLButtonElement>) => {
     setIsAdult(false);
-    console.log(event.target);
+    console.log(event.screenX);
   }
 
-  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(event.target.value);
   }
   return (
