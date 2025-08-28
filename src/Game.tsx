@@ -7,6 +7,9 @@ type GameProps = {
   version?: GameFromServer['version'];
 }
 
+// type GameProps = Pick<GameFromServer, 'name' | 'description' | 'version'>;
+// type GameProps = Omit<GameFromServer, 'id' | 'forKids' | 'price' | 'tags'>;
+
 const Game: FC<GameProps> = ({ name, description, version}) => {
   return (
     <div>
