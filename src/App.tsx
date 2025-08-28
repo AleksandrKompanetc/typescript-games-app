@@ -60,9 +60,10 @@ function App() {
               {game.tags && (
                 <>
                   Tags: {renderTags(game.tags)}
+                </>
               )}
             </>
-          )}
+          ))}
         </div>
       ))}
     </div>
