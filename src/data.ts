@@ -1,4 +1,4 @@
-const enum Currency {
+export const enum Currency {
   USD = 'USD',
   EUR = 'EUR',
   HRN = 'HRN',
