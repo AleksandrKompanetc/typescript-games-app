@@ -26,7 +26,7 @@ export const GAMES: GamesFromServer = [
     price: 1000,
     tags: ['fighting', 'arcade', 'multiplayer'],
     forKids: false,
-    currency: 'USD',
+    currency: Currency.USD,
   },
   {
     id: 2,
@@ -34,13 +34,13 @@ export const GAMES: GamesFromServer = [
     price: 700,
     tags: ['racing', 'arcade', 'multiplayer'],
     forKids: true,
-    currency: 'HRN',
+    currency: Currency.HRN,
   },
   {
     id: 3,
     name: 'FIFA',
     description: 'A football simulation video game developed by EA Sports.',
     forKids: true,
-    currency: 'EUR',
+    currency: Currency.EUR,
   }
 ]
