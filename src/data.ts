@@ -1,3 +1,9 @@
+const enum Currency {
+  USD = 'USD',
+  EUR = 'EUR',
+  HRN = 'HRN',
+}
+
 export type GameFromServer = {
   id: number;
   name: string;
@@ -6,7 +12,7 @@ export type GameFromServer = {
   price?: number;
   tags?: string[];
   forKids: boolean;
-  currency: 'USD' | 'EUR' | 'HRN';
+  currency: Currency;
 }
 
 export type GamesFromServer = GameFromServer[];
