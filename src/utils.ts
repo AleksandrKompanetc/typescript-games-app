@@ -8,9 +8,15 @@ export function getGamesFromServer(): Promise<GamesFromServer> {
   });
 }
 
+const CurrencyObj = {
+  'USD': 'USD',
+  'EUR': 'EUR',
+  'HRN': 'HRN',
+}
+
 export function priceWithCurrency(
   price: NonNullable<GameFromServer['price']>, 
-  currency: GameFromServer['currency']
+  currency: Currency
 ): string {
 
   if (currency === Currency.EUR) {
